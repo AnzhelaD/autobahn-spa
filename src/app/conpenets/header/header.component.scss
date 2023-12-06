@@ -1,0 +1,27 @@
+
+.mat-toolbar {
+  height: 64px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header-name {
+  margin-left: 12px;
+  color: #fff;
+  font-family: "PlayballRegular";
+  font-size: 40px;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.icon {
+  color: white;
+  margin-right: 20px;
+}
+
+.favorite-icon {
+  color: red;
+}
