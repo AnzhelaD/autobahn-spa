@@ -6,10 +6,12 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
+import {RouterOutlet} from "@angular/router";
+import {RoadListModule} from "../roadList/road-list.module";
 
 @NgModule({
   declarations: [MainComponent],
-  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatGridListModule, MatButtonModule, MatTableModule,],
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatGridListModule, MatButtonModule, MatTableModule, RouterOutlet, RoadListModule],
   exports: [
     MainComponent
   ]

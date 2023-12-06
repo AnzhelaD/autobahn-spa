@@ -13,6 +13,8 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {EffectsModule} from "@ngrx/effects";
 import {AutobahnEffects} from "./store/autobahn.effects";
 import {HttpClientModule} from "@angular/common/http";
+import {DetailModule} from "./conpenets/detail/detail.module";
+import {RoadListModule} from "./conpenets/roadList/road-list.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {HttpClientModule} from "@angular/common/http";
         FooterModule,
         BrowserAnimationsModule,
         MainModule,
+        RoadListModule,
         HttpClientModule,
+        DetailModule,
         StoreModule.forRoot({ road: AutobahnReducer }),
         StoreDevtoolsModule.instrument({
         maxAge: 25,
