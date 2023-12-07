@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Store} from "@ngrx/store";
 import {
@@ -9,10 +9,8 @@ import {
   loadWebCams,
   setDynamicId,
 } from "../../store/autobahn.actions";
-import {MatTabChangeEvent} from "@angular/material/tabs";
-import {selectDynamicId, selectLoading} from "../../store/autobahn.selectors";
-import {MatDialog} from "@angular/material/dialog";
-import {Subject, takeUntil} from "rxjs";
+import { selectLoading} from "../../store/autobahn.selectors";
+
 
 @Component({
   selector: 'app-detail',

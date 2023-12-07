@@ -3,7 +3,6 @@ import { Store } from "@ngrx/store";
 import { selectIsOpenDialog } from "../../store/autobahn.selectors";
 import { closeDialog } from "../../store/autobahn.actions";
 import { Observable } from "rxjs";
-import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-dialog',

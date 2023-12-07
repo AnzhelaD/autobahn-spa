@@ -36,7 +36,7 @@ export const initialState: RoadState = {
 
 export const AutobahnReducer = createReducer(
   initialState,
-  on(getStarted, (state, { startApp }) => ({ ...state, startApp: true , loading: true})),
+  on(getStarted, (state) => ({ ...state, startApp: true , loading: true})),
   on(loadRoads, (state, { roads }) => ({ ...state, roads})),
   on(loadRoadsSuccess, (state, { roads }) => ({ ...state, roads, error: null, loading: false  })),
   on(setDynamicId, (state, { dynamicId }) => ({

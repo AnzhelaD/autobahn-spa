@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {openDialog, setAutobahnItem} from "../../store/autobahn.actions";
 import {Store} from "@ngrx/store";
-import {selectData, selectDynamicId, selectIsOpenDialog} from "../../store/autobahn.selectors";
+import {selectData, selectIsOpenDialog} from "../../store/autobahn.selectors";
 import {IAutobahnItem, IData} from "../../IAutobahn";
 import {Observable} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
