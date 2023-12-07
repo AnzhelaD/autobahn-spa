@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import {forkJoin, of, switchMap} from 'rxjs';
+import { of, switchMap} from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import {
   getStarted, loadClosure, loadElectricCharging,

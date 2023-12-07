@@ -1,13 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {RoadState} from "./autobahn.reducer";
-import {setDynamicId} from "./autobahn.actions";
+
 export const selectRoadState = createFeatureSelector<RoadState>('road');
-
-export const selectStartApp = createSelector(
-  selectRoadState,
-  (state) => state?.startApp
-);
-
 export const selectRoads = createSelector(
   selectRoadState,
   (state) => state.roads
@@ -26,10 +20,6 @@ export const selectData = createSelector(
   (state) => state.data
 );
 
-export const selectSelectedTab = createSelector(
-  selectRoadState,
-  (state) => state.selectedTab
-);
 
 export const selectAutobahnItem = createSelector(
   selectRoadState,

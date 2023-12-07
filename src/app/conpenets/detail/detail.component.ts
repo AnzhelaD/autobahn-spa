@@ -7,10 +7,10 @@ import {
   loadParkingLorry,
   loadRoadworks, loadWarning,
   loadWebCams,
-  setDynamicId, setSelectedTab
+  setDynamicId,
 } from "../../store/autobahn.actions";
 import {MatTabChangeEvent} from "@angular/material/tabs";
-import {selectDynamicId, selectLoading, selectSelectedTab} from "../../store/autobahn.selectors";
+import {selectDynamicId, selectLoading} from "../../store/autobahn.selectors";
 import {MatDialog} from "@angular/material/dialog";
 import {Subject, takeUntil} from "rxjs";
 
