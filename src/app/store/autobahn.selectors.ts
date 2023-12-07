@@ -30,3 +30,13 @@ export const selectSelectedTab = createSelector(
   selectRoadState,
   (state) => state.selectedTab
 );
+
+export const selectAutobahnItem = createSelector(
+  selectRoadState,
+  (state) => state.autobahnItem
+);
+
+export const selectIsOpenDialog = createSelector(
+  selectRoadState,
+  (state) => state.isOpenDialog
+);

@@ -1,0 +1,17 @@
+.dialog-container{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.wrapper-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-container {
+  height: 400px;
+  width: 550px;
+  background-color: blue;
+}
+

@@ -1,23 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Store} from "@ngrx/store";
 import {
+  loadClosure,
   loadElectricCharging,
   loadParkingLorry,
-  loadRoadworks,
+  loadRoadworks, loadWarning,
   loadWebCams,
-  setDynamicId
+  setDynamicId, setSelectedTab
 } from "../../store/autobahn.actions";
 import {MatTabChangeEvent} from "@angular/material/tabs";
-import {selectDynamicId} from "../../store/autobahn.selectors";
+import {selectDynamicId, selectLoading, selectSelectedTab} from "../../store/autobahn.selectors";
+import {MatDialog} from "@angular/material/dialog";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit{
   public dynamicId: string = '';
+  public loading$ = this.store.select(selectLoading);
+
 
   constructor(private route: ActivatedRoute, private store: Store, private router: Router) { }
 
@@ -52,6 +57,14 @@ export class DetailComponent implements OnInit {
       case 3:
         dataType = 'electricCharging';
         this.store.dispatch(loadElectricCharging({ id: this.dynamicId }));
+        break;
+      case 4:
+        dataType = 'closure';
+        this.store.dispatch(loadClosure({ id: this.dynamicId }));
+        break;
+      case 5:
+        dataType = 'warning';
+        this.store.dispatch(loadWarning({ id: this.dynamicId }));
         break;
       default:
         dataType = 'roadworks';

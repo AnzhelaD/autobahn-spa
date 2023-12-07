@@ -1,6 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
-import {getStarted, loadRoads, loadRoadsSuccess, setData, setDynamicId, setSelectedTab,} from './autobahn.actions';
-import {IAutobahn, IData} from "../IAutobahn";
+import {
+  closeDialog,
+  getStarted,
+  loadRoads,
+  loadRoadsSuccess,
+  openDialog,
+  setAutobahnItem,
+  setData,
+  setDynamicId,
+} from './autobahn.actions';
+import { IAutobahnItem, IData} from "../IAutobahn";
 
 export interface RoadState {
   startApp: boolean;
@@ -9,10 +18,8 @@ export interface RoadState {
   roads: string[];
   selectedTab: string;
   data: IData[] | [];
-  cameras: any[];
-  roadworks: any[];
-  electricCharging: any[];
-  parkingLorry: any[];
+  isOpenDialog: boolean;
+  autobahnItem: IAutobahnItem | null;
 }
 
 export const initialState: RoadState = {
@@ -22,10 +29,9 @@ export const initialState: RoadState = {
   loading: false,
   data: [],
   selectedTab: '',
-  roadworks: [],
-  cameras: [],
-  electricCharging: [],
-  parkingLorry: [],
+  autobahnItem: null,
+  isOpenDialog: false,
+
 };
 
 export const AutobahnReducer = createReducer(
@@ -40,10 +46,12 @@ export const AutobahnReducer = createReducer(
   on(setData, (state, { data }) => ({
     ...state,
     data,
+    loading: false
   })),
-  on(setSelectedTab, (state, { dataType }) => ({
+  on(setAutobahnItem, (state, { autobahnItem }) => ({
     ...state,
-    selectedTab: dataType,
+    autobahnItem: autobahnItem,
   })),
-
+  on(openDialog, state => ({ ...state, isOpenDialog: true })),
+  on(closeDialog, state => ({ ...state, isOpenDialog: false }))
 );

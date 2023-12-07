@@ -8,9 +8,13 @@
   max-width: 300px;
   overflow: scroll;
 }
+.data-table-identifier{
+  white-space: normal;
+  word-wrap: break-word;
+}
 .app-data-table-container th {
   position: sticky;
   top: 0;
-  background-color: chocolate;
+  background-color: lightgray;
 }
 

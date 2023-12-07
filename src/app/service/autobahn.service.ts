@@ -26,6 +26,17 @@ export class AutobahnService {
     return this.http.get<any>(endpoint);
   }
 
+  getWarning(id: string): Observable<any>{
+    const endpoint = `${this.apiUrl}/${id}/services/warning`;
+    return this.http.get<any>(endpoint);
+  }
+
+  getClosure(id: string): Observable<any>{
+    const endpoint = `${this.apiUrl}/${id}/services/closure`;
+    return this.http.get<any>(endpoint);
+  }
+
+
   getParkingLorry(id: string): Observable<any>{
     const endpoint = `${this.apiUrl}/${id}/services/parking_lorry`;
     return this.http.get<any>(endpoint);

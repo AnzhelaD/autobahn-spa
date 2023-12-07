@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { DataTableComponent } from './app-data-table.component';
+import {DialogModule} from "../dialog/dialog.module";
+import {DialogComponent} from "../dialog/dialog.component";
 
 @NgModule({
   declarations: [DataTableComponent],
@@ -10,6 +12,7 @@ import { DataTableComponent } from './app-data-table.component';
     CommonModule,
     MatTableModule,
     MatButtonModule,
+    DialogModule,
   ],
   exports: [DataTableComponent]
 })

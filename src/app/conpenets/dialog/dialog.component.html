@@ -1,0 +1,18 @@
+<div class="dialog-container" *ngIf="isOpenDialog$ | async">
+  <mat-dialog-content class="mat-typography">
+    <h2>View on Map</h2>
+    <div class="wrapper-container">
+      <div class="map-container">
+        <app-map></app-map>
+      </div>
+      <div class="card-container">
+        <app-card></app-card>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions  class="dialog-action" align="end">
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+  </mat-dialog-actions>
+
+</div>
+

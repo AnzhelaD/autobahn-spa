@@ -1,0 +1,16 @@
+<div class="card-container" *ngIf="(autobahnItem$ | async) as autobahnItem">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Title: {{ autobahnItem.title }}</mat-card-title>
+      <mat-card-subtitle>Subtitle: {{ autobahnItem.subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="wrapped-text">Identifier: {{ autobahnItem.identifier }}</p>
+      <p>Point: {{ autobahnItem.point }}</p>
+    </mat-card-content>
+    <mat-card-content>
+      <p>Coordinate Latitude: {{ autobahnItem.coordinate.lat }}</p>
+      <p>Coordinate Longitude: {{ autobahnItem.coordinate.long }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -18,6 +18,7 @@ import {RoadListModule} from "./conpenets/roadList/road-list.module";
 import {DataTableModule} from "./conpenets/data-table/app-data-table.module";
 import {CardModule} from "./conpenets/card/card.module";
 import {MapModule} from "./conpenets/map/map.module";
+import {DialogModule} from "./conpenets/dialog/dialog.module";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MapModule} from "./conpenets/map/map.module";
         DataTableModule,
         CardModule,
         MapModule,
+        DialogModule,
         StoreModule.forRoot({ road: AutobahnReducer }),
         StoreDevtoolsModule.instrument({
         maxAge: 25,
