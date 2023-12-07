@@ -1,1 +1,17 @@
-<h1 *ngIf="dynamicId">Deatail: {{dynamicId}}</h1>
+<div class="detail-container">
+  <button  class="detail-action" mat-raised-button color="primary" (click)="goBack()">GoBack</button>
+  <mat-tab-group (selectedIndexChange)="tabChanged($event)">
+    <mat-tab label="Roadworks">
+      <app-data-table [dataType]="'roadworks'"></app-data-table>
+    </mat-tab>
+    <mat-tab label="WebCams">
+      <app-data-table [dataType]="'webCams'"></app-data-table>
+    </mat-tab>
+    <mat-tab label="Parking Lorry">
+      <app-data-table [dataType]="'parkingLorry'"></app-data-table>
+    </mat-tab>
+    <mat-tab label="Electric Charging">
+      <app-data-table [dataType]="'electricCharging'"></app-data-table>
+    </mat-tab>
+  </mat-tab-group>
+</div>

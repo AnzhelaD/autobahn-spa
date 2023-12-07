@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Store} from "@ngrx/store";
+import {
+  loadElectricCharging,
+  loadParkingLorry,
+  loadRoadworks,
+  loadWebCams,
+  setDynamicId
+} from "../../store/autobahn.actions";
+import {MatTabChangeEvent} from "@angular/material/tabs";
+import {selectDynamicId} from "../../store/autobahn.selectors";
 
 @Component({
   selector: 'app-detail',
@@ -7,15 +17,47 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  public dynamicId: string = '';
 
-  public dynamicId: string | undefined;
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private store: Store, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.store.dispatch(setDynamicId({ dynamicId: params['id'] }));
       this.dynamicId = params['id'];
-      console.log('this.dynamicId', this.dynamicId);
     });
+    this.tabChanged(0);
+  }
+
+  goBack(){
+    this.router.navigate(['/']);
+  }
+
+  tabChanged(index: number = 0): void {
+    let dataType: string;
+
+    switch (index) {
+      case 0:
+        dataType = 'roadworks';
+        this.store.dispatch(loadRoadworks({ id: this.dynamicId }));
+        break;
+      case 1:
+        dataType = 'webCams';
+        this.store.dispatch(loadWebCams({ id: this.dynamicId }));
+        break;
+      case 2:
+        dataType = 'parkingLorry';
+        this.store.dispatch(loadParkingLorry({ id: this.dynamicId }));
+        break;
+      case 3:
+        dataType = 'electricCharging';
+        this.store.dispatch(loadElectricCharging({ id: this.dynamicId }));
+        break;
+      default:
+        dataType = 'roadworks';
+        this.store.dispatch(loadRoadworks({ id: this.dynamicId }));
+    }
+
+    console.log('Selected tab dataType:', dataType);
   }
 }

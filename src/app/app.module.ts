@@ -15,6 +15,9 @@ import {AutobahnEffects} from "./store/autobahn.effects";
 import {HttpClientModule} from "@angular/common/http";
 import {DetailModule} from "./conpenets/detail/detail.module";
 import {RoadListModule} from "./conpenets/roadList/road-list.module";
+import {DataTableModule} from "./conpenets/data-table/app-data-table.module";
+import {CardModule} from "./conpenets/card/card.module";
+import {MapModule} from "./conpenets/map/map.module";
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import {RoadListModule} from "./conpenets/roadList/road-list.module";
         RoadListModule,
         HttpClientModule,
         DetailModule,
+        DataTableModule,
+        CardModule,
+        MapModule,
         StoreModule.forRoot({ road: AutobahnReducer }),
         StoreDevtoolsModule.instrument({
         maxAge: 25,

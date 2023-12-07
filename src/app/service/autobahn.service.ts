@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import {HttpClient} from "@angular/common/http";
-import {IRoads} from "../IRoads";
+import {IAutobahn} from "../IAutobahn";
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class AutobahnService {
 
   constructor(private http: HttpClient) {}
 
-  getRoads(): Observable<IRoads> {
+  getRoads(): Observable<IAutobahn> {
     const endpoint = `${this.apiUrl}/`;
     return this.http.get<any>(endpoint);
   }
@@ -20,4 +20,19 @@ export class AutobahnService {
     const endpoint = `${this.apiUrl}/${id}/services/roadworks`;
     return this.http.get<any>(endpoint);
   }
+
+  getWebCams(id: string): Observable<any>{
+    const endpoint = `${this.apiUrl}/${id}/services/webcam`;
+    return this.http.get<any>(endpoint);
+  }
+
+  getParkingLorry(id: string): Observable<any>{
+    const endpoint = `${this.apiUrl}/${id}/services/parking_lorry`;
+    return this.http.get<any>(endpoint);
+  }
+  getElectricCharging(id: string): Observable<any>{
+    const endpoint = `${this.apiUrl}/${id}/services/electric_charging_station"`;
+    return this.http.get<any>(endpoint);
+  }
+
 }

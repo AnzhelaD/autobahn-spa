@@ -1,0 +1,16 @@
+.app-data-table-container{
+  max-width: 80%;
+  margin-top: 40px;
+  overflow: scroll;
+}
+.mat-mdc-cell{
+  min-width: 100px;
+  max-width: 300px;
+  overflow: scroll;
+}
+.app-data-table-container th {
+  position: sticky;
+  top: 0;
+  background-color: chocolate;
+}
+
