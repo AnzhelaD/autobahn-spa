@@ -11,7 +11,8 @@ export interface IData {
 
 export type CoordinateType = {
   lat: string;
-  long: string
+  lng: string;
+  long: string;
 }
 export  interface IAutobahnItem {
   title: string;
@@ -19,4 +20,11 @@ export  interface IAutobahnItem {
   coordinate: CoordinateType,
   point: string;
   subtitle: string;
+}
+
+export interface MapMarkerConfig {
+  position: { lat: number; lng: number };
+  label?: string;
+  title?: string;
+  options?: google.maps.MarkerOptions;
 }

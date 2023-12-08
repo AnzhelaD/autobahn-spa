@@ -1,1 +1,15 @@
-<div class="map-container">MAP</div>
+<div class="map-container" *ngIf="(autobahnItem$ | async) as autobahnItem">
+  <google-map height="400px"
+  width="550px"
+              [center]="center"
+              [zoom]="zoom"
+              (mapClick)="moveMap($event)"
+              (mapMousemove)="move($event)"
+              [options]="options">
+    <map-marker *ngFor="let marker of markers"
+                [position]="marker.position">
+    </map-marker>
+  </google-map>
+
+</div>
+

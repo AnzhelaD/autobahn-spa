@@ -2,8 +2,8 @@
   <mat-dialog-content class="mat-typography">
     <h2>View on Map</h2>
     <div class="wrapper-container">
-      <div class="map-container">
-        <app-map></app-map>
+      <div class="map-container" *ngIf="(autobahnItem$ | async) as autobahnItem">
+        <app-map [lat]="+autobahnItem.coordinate.lat" [lng]="+autobahnItem.coordinate.long" ></app-map>
       </div>
       <div class="card-container">
         <app-card></app-card>
