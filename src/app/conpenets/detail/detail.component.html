@@ -1,5 +1,11 @@
-<div class="detail-container" *ngIf="!(loading$ | async)">
-  <button  class="detail-action" mat-raised-button color="primary" (click)="goBack()">GoBack</button>
+<div class="detail-container" *ngIf="(loading$ | async)  === false">
+  <button
+    class="detail-action"
+    mat-raised-button
+    color="primary"
+    (click)="goBack()">
+    GoBack
+  </button>
   <mat-tab-group (selectedIndexChange)="tabChanged($event)">
     <mat-tab label="Roadworks">
       <app-data-table [dataType]="'roadworks'"></app-data-table>

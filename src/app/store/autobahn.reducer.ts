@@ -7,9 +7,9 @@ import {
   openDialog,
   setAutobahnItem,
   setData,
-  setDynamicId,
+  setDynamicId
 } from './autobahn.actions';
-import { IAutobahnItem, IData} from "../IAutobahn";
+import { IAutobahnItem, IData } from '../IAutobahn';
 
 export interface RoadState {
   startApp: boolean;
@@ -30,18 +30,22 @@ export const initialState: RoadState = {
   data: [],
   selectedTab: '',
   autobahnItem: null,
-  isOpenDialog: false,
-
+  isOpenDialog: false
 };
 
 export const AutobahnReducer = createReducer(
   initialState,
-  on(getStarted, (state) => ({ ...state, startApp: true , loading: true})),
-  on(loadRoads, (state, { roads }) => ({ ...state, roads})),
-  on(loadRoadsSuccess, (state, { roads }) => ({ ...state, roads, error: null, loading: false  })),
+  on(getStarted, (state) => ({ ...state, startApp: true, loading: true })),
+  on(loadRoads, (state, { roads }) => ({ ...state, roads })),
+  on(loadRoadsSuccess, (state, { roads }) => ({
+    ...state,
+    roads,
+    error: null,
+    loading: false
+  })),
   on(setDynamicId, (state, { dynamicId }) => ({
     ...state,
-    dynamicId,
+    dynamicId
   })),
   on(setData, (state, { data }) => ({
     ...state,
@@ -50,8 +54,8 @@ export const AutobahnReducer = createReducer(
   })),
   on(setAutobahnItem, (state, { autobahnItem }) => ({
     ...state,
-    autobahnItem: autobahnItem,
+    autobahnItem: autobahnItem
   })),
-  on(openDialog, state => ({ ...state, isOpenDialog: true })),
-  on(closeDialog, state => ({ ...state, isOpenDialog: false }))
+  on(openDialog, (state) => ({ ...state, isOpenDialog: true })),
+  on(closeDialog, (state) => ({ ...state, isOpenDialog: false }))
 );

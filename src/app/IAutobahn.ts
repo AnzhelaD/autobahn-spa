@@ -13,11 +13,11 @@ export type CoordinateType = {
   lat: string;
   lng: string;
   long: string;
-}
-export  interface IAutobahnItem {
+};
+export interface IAutobahnItem {
   title: string;
   identifier: string;
-  coordinate: CoordinateType,
+  coordinate: CoordinateType;
   point: string;
   subtitle: string;
 }

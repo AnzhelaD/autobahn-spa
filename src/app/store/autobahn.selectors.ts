@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {RoadState} from "./autobahn.reducer";
+import { RoadState } from './autobahn.reducer';
 
 export const selectRoadState = createFeatureSelector<RoadState>('road');
 export const selectRoads = createSelector(
@@ -19,7 +19,6 @@ export const selectData = createSelector(
   selectRoadState,
   (state) => state.data
 );
-
 
 export const selectAutobahnItem = createSelector(
   selectRoadState,

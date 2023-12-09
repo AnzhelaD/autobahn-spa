@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from "@ngrx/store";
-import {getStarted} from "../../store/autobahn.actions";
+import { Store } from '@ngrx/store';
+import { getStarted } from '../../store/autobahn.actions';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,8 @@ import {getStarted} from "../../store/autobahn.actions";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
   ngOnInit() {
-    this.store.dispatch(getStarted({startApp: true}));
+    this.store.dispatch(getStarted({ startApp: true }));
   }
 }

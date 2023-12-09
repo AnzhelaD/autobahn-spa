@@ -1,38 +1,41 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Store} from "@ngrx/store";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import {
   loadClosure,
   loadElectricCharging,
   loadParkingLorry,
-  loadRoadworks, loadWarning,
+  loadRoadworks,
+  loadWarning,
   loadWebCams,
-  setDynamicId,
-} from "../../store/autobahn.actions";
-import { selectLoading} from "../../store/autobahn.selectors";
-
+  setDynamicId
+} from '../../store/autobahn.actions';
+import { selectLoading } from '../../store/autobahn.selectors';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit{
+export class DetailComponent implements OnInit {
   public dynamicId: string = '';
   public loading$ = this.store.select(selectLoading);
 
-
-  constructor(private route: ActivatedRoute, private store: Store, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private store: Store,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.store.dispatch(setDynamicId({ dynamicId: params['id'] }));
       this.dynamicId = params['id'];
     });
     this.tabChanged(0);
   }
 
-  goBack(){
+  goBack() {
     this.router.navigate(['/']);
   }
 
