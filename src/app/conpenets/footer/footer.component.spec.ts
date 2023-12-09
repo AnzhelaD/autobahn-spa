@@ -9,7 +9,7 @@ describe('FooterComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [FooterComponent],
-      imports: [MatToolbarModule],
+      imports: [MatToolbarModule]
     });
 
     fixture = TestBed.createComponent(FooterComponent);
@@ -24,5 +24,4 @@ describe('FooterComponent', () => {
     const currentYear = new Date().getFullYear();
     expect(component.currentYear).toBe(currentYear);
   });
-
 });
