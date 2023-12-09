@@ -21,3 +21,7 @@ COPY nginx.conf /etc/nginx/conf.d
 COPY --from=build /app/dist/autobahn/browser /usr/share/nginx/html
 
 EXPOSE 80
+
+# Example to rum without docker compose
+# docker build -t autobahn-spa .
+# docker run -d -p 8080:80 autobahn-spa
