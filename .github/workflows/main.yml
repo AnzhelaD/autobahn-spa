@@ -14,7 +14,7 @@ jobs:
       - name: installing node_modules
         run: npm install
       - name: building project
-        run: npm run build:prod
+        run: npm run build
       - name: running eslint
         run: npm run lint
       - name: running tests
