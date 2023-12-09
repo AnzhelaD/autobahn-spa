@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IAutobahn } from '../IAutobahn';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutobahnService {
-  private apiUrl = 'https://verkehr.autobahn.de/o/autobahn';
+  private apiUrl = environment.autobahnApiUrl;
 
   constructor(private http: HttpClient) {}
 
