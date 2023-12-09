@@ -1,5 +1,7 @@
 name: CI configure
-on: [push]
+on:
+  push:
+    branches: [main]
 jobs:
   github-ci-actions:
     runs-on: ubuntu-latest
@@ -12,9 +14,9 @@ jobs:
       - name: installing node_modules
         run: npm install
       - name: building project
-        run: npm run build
+        run: npm run build:prod
       - name: running eslint
         run: npm run lint
       - name: running tests
-        run: npm run test
+        run: npm run test:prod
       - run: echo "This job's status is ${{ job.status }}."
