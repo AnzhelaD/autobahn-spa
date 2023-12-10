@@ -41,7 +41,6 @@ export class DetailComponent implements OnInit {
 
   tabChanged(index: number = 0): void {
     let dataType: string;
-
     switch (index) {
       case 0:
         dataType = 'roadworks';
@@ -71,7 +70,5 @@ export class DetailComponent implements OnInit {
         dataType = 'roadworks';
         this.store.dispatch(loadRoadworks({ id: this.dynamicId }));
     }
-
-    console.log('Selected tab dataType:', dataType);
   }
 }

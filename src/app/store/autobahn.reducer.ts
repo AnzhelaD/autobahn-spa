@@ -16,7 +16,6 @@ export interface RoadState {
   loading: boolean;
   dynamicId: string | null;
   roads: string[];
-  selectedTab: string;
   data: IData[] | [];
   isOpenDialog: boolean;
   autobahnItem: IAutobahnItem | null;
@@ -28,7 +27,6 @@ export const initialState: RoadState = {
   dynamicId: null,
   loading: false,
   data: [],
-  selectedTab: '',
   autobahnItem: null,
   isOpenDialog: false
 };

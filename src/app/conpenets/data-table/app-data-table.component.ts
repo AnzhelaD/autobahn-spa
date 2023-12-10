@@ -13,7 +13,6 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./app-data-table.component.scss']
 })
 export class DataTableComponent implements OnInit {
-  @Input() dataType: string = '';
   public data$: Observable<IData[] | []> = this.store.select(selectData);
   public isOpenDialog$: Observable<boolean> =
     this.store.select(selectIsOpenDialog);
@@ -39,7 +38,6 @@ export class DataTableComponent implements OnInit {
   }
 
   viewOnMap(item: IAutobahnItem): void {
-    console.log('View details for:', item);
     this.store.dispatch(
       setAutobahnItem({ autobahnItem: item as IAutobahnItem })
     );

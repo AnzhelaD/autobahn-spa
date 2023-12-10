@@ -22,7 +22,10 @@ export class MapComponent implements OnChanges {
 
   public autobahnItem$: Observable<IAutobahnItem | null> =
     this.store.select(selectAutobahnItem);
-  display: any;
+  display: google.maps.LatLngLiteral = {
+    lat: 0,
+    lng: 0
+  };
   center: google.maps.LatLngLiteral = {
     lat: this.lat,
     lng: this.lng
